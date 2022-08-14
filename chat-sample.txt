@@ -1,0 +1,36 @@
+<!-- <div class="msg left">
+            <div class="user">
+                <p class="username">Killian</p>
+                <p class="time">15:13 25/08/2022</p>
+            </div>
+            <div class="content">
+                Salut. Je pars à Paris cette semaine. Je vais visiter quelques musées et monuments. Je vais aussi visiter la ville de Nantes.
+            </div>
+        </div>
+        <div class="msg right">
+            <div class="user">
+                <p class="username">Valentin</p>
+                <p class="time">15:14 25/08/2022</p>
+            </div>
+            <div class="content">
+                D'accord. Je te souhaite une bonne journée. J'espère que tu vas bien. Merci.
+            </div>
+        </div>
+        <div class="msg left">
+            <div class="user">
+                <p class="username">Franck</p>
+                <p class="time">15:21 25/08/2022</p>
+            </div>
+            <div class="content">
+                Je rentre dans une vingtaine de minutes. Je rapporte des photos de la ville de Nantes. Je vais aussi visiter la ville de Paris. À tout de suite.
+            </div>
+        </div>
+        <div class="msg left">
+            <div class="user">
+                <p class="username">Linda</p>
+                <p class="time">15:35 25/08/2022</p>
+            </div>
+            <div class="content">
+                On a un problème de connexion. Je vais te le signaler. Quand tu seras connecté, je te t'enverrai un message. Bonne journée.
+            </div>
+        </div> -->
