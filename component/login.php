@@ -21,8 +21,10 @@
                 <label for="Inscription">Inscription</label>
                 <div class="mb-3 big-btn"><input class="btn btn-primary d-block w-100 mt-3 btn-submit" type="submit" name="Inscription"></input></div>
                 <?php
-                    if ($loggedInReally == "false") {
+                    if ($_GET["error"] == "login") {
                         echo "<p class='incorrects-ids'>Identifiants incorrects</p>";
+                    } elseif ($_GET["error"] == "signin") {
+                        echo "<p class='incorrects-ids'>Identifiant déjà pris</p>";
                     }
                 ?>
             </form>

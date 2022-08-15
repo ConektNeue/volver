@@ -13,7 +13,7 @@
         $account = json_decode($accountContent, true);
 
         for ($i = 0; $i < count($account); $i++) {
-            if ($account[$i]["username"] == $username) {
+            if ($account[$i]["username"] == $_SESSION["username"]) {
                 echo "<div class='item right'>" . $account[$i]["username"] . "</div>";
             } else {
                 echo "<div class='item'>" . $account[$i]["username"] . "</div>";
@@ -31,7 +31,7 @@
         if (filesize($messagesUrl)) {
             $msgNumber = count($messages);
             for ($i = count($messages) - 1; $i > -1; $i--) {
-                if ($messages[$i]["username"] == $username) {
+                if ($messages[$i]["username"] == $_SESSION["username"]) {
                     $side = "right";
                 } else {
                     $side = "left";
