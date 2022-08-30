@@ -45,7 +45,7 @@
 
 :root {
     --textarea-height: 42px;
-    --bottom-bar: 55px;
+    --bottom-bar: 56px;
 }
 
 body {
@@ -84,10 +84,11 @@ input {
     height: var(--bottom-bar);
     margin: 0;
     padding: 0;
-    background-color: transparent;
+    background-color: rgb(3, 54, 255);
     border: none;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     /* justify-content: space-between; */
     z-index: 100;
     /* border: 1px dashed red; */
@@ -98,23 +99,15 @@ input {
     position: relative;
     width: 100%;
     height: 100%;
+    min-width: 80px;
+    max-width: 168px;
     margin: 0;
     padding: 0;
+    padding-left: 12px; padding-right: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-}
-
-.bottom-bar>.item>.text {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-size: 15px;
-    font-family: 'Rubik Regular';
-    color: white;
 }
 
 /* .bottom-bar>.item.active {
@@ -123,8 +116,8 @@ input {
 
 .bottom-bar>.item>.icon {
     position: relative;
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
     margin: 0;
     padding: 0;
     background-color: transparent;
@@ -153,7 +146,26 @@ input {
     background-color: transparent;
     border: none;
     pointer-events: none;
+    fill: rgba(255, 255, 255, .76);
     display: block;
+}
+
+.bottom-bar>.item.active>.icon>svg{
+    margin-top: 5px;
+}
+
+.bottom-bar>.item>.text{
+    position: relative;
+    width: max-content;
+    height: max;
+    margin: 0; padding: 0;
+    margin-top: 4px;
+    letter-spacing: .5px;
+    background-color: transparent;
+    color: white;
+    font-size: 14px;
+    font-family: 'Rubik Regular';
+    display: none;
 }
 
 .msg-box {
@@ -164,9 +176,9 @@ input {
     height: calc(100% - var(--bottom-bar));
     margin: 0;
     padding: 0;
-    margin-top: -50px;
+    /* margin-top: -50px; */
     padding-top: 50px;
-    padding-bottom: calc(var(--textarea-height) + -20px);
+    padding-bottom: calc(var(--textarea-height) + 20px);
     /* border: 3px dashed red; */
     overflow-y: auto;
     display: flex;
@@ -250,6 +262,10 @@ input {
     /* text-align: left; */
     /* hyphens: auto; */
     /* word-wrap: break-word; */
+}
+
+.msg-from-same-user{
+    margin-bottom: -5px !important;
 }
 
 .msg-box>.msg-global-container>.msg.left {
@@ -345,13 +361,13 @@ input {
     padding: 0;
     padding: 0 10px 10px 10px;
     /* border: 3px dashed blue; */
-    background-color: transparent;
-    /* backdrop-filter: blur(4px); */
+    background-color: rgba(255, 255, 255, .5);
+    backdrop-filter: blur(4px);
     display: flex;
     align-items: flex-end;
     justify-content: center;
     overflow: visible;
-    transition: 3s;
+    /* transition: 3s; */
 }
 
 .textarea-container {

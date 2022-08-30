@@ -4,19 +4,25 @@ date_default_timezone_set('Europe/Paris');
 
 session_start();
 
+if ($_SESSION['logged'] == true) {
+    header("Location: ./user/home/");
+}
+
 if (!empty($_REQUEST["username"]) && !empty($_REQUEST["password"]) && !empty($_REQUEST["Connexion"])) {
     $username = $_REQUEST["username"];
     $password = $_REQUEST["password"];
 
-    $accountUrl = "./database/account.json";
+    $accountUrl = "./database/account-zgizrnb.json";
     $accountContent = file_get_contents($accountUrl);
     $account = json_decode($accountContent, true);
 
+    $loggedIn = false;
     for ($i = 0; $i < count($account); $i++) {
         if ($account[$i]["username"] == $username && $account[$i]["authentifiant"] == $password) {
             $_SESSION["logged"] = true;
             $_SESSION["username"] = $username;
             header("Location: ./user/home/");
+            $loggedIn = true;
         }
     }
 
@@ -27,7 +33,7 @@ if (!empty($_REQUEST["username"]) && !empty($_REQUEST["password"]) && !empty($_R
     $username = $_REQUEST["username"];
     $password = $_REQUEST["password"];
 
-    $accountUrl = "./database/account.json";
+    $accountUrl = "./database/account-zgizrnb.json";
     $accountContent = file_get_contents($accountUrl);
     $account = json_decode($accountContent, true);
 
@@ -271,7 +277,7 @@ if (!empty($_REQUEST["username"]) && !empty($_REQUEST["password"]) && !empty($_R
     <title>Message Local</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./login.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous"> -->
 </head>
 
 <body>

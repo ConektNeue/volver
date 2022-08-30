@@ -2,23 +2,16 @@
 
 date_default_timezone_set('Europe/Paris');
 
-$loggedIn = false;
-
-if (!empty($_REQUEST["username"]) && !empty($_REQUEST["password"])) {
-    $username = $_REQUEST["username"];
-    $password = $_REQUEST["password"];
-
-    $accountUrl = "../../database/account.json";
-    $accountContent = file_get_contents($accountUrl);
-    $account = json_decode($accountContent, true);
-
-    for ($i = 0; $i < count($account); $i++) {
-        if ($account[$i]["username"] == $username && $account[$i]["authentifiant"] == $password) {
-            $loggedIn = true;
-        }
-    }
+if (!session_id()) {
+    session_start();
 }
 
+if ($_SESSION["logged"] != true) {
+    header("Location: ../../index.php");
+} else {
+    unset($_SESSION['userPage']);
+    $_SESSION["userPage"] = "people";
+}
 ?>
 
 <!DOCTYPE html>
@@ -34,18 +27,13 @@ if (!empty($_REQUEST["username"]) && !empty($_REQUEST["password"])) {
 
 <body>
 
-    <div class="ui-controller">
+    <div class="ui-controller" data-username="<?php echo $_SESSION["username"]; ?>">
         <?php
-        if ($loggedIn) {
-            require "./component/people-list.php";
-            require "./component/bottom-bar.php";
-            echo '<script src="./people-list.js"></script>';
-        } else {
-            header("Location: ../../index.php");
-        }
+        require "../../component/bottom-bar.php";
         ?>
     </div>
 
+    <script src="./people-list.js"></script>
 </body>
 
 </html>
