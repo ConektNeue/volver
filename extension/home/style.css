@@ -1,0 +1,392 @@
+:root {
+    --badges-margin-top: 0px;
+}
+
+@font-face {
+    font-family: "Source Sans Pro";
+    src: url('./font/sans-serif/SourceSansPro-Regular.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: 'Source Sans Pro Black';
+    src: url('./font/sans-serif/SourceSansPro-Black.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: 'Source Sans Pro SemiBold';
+    src: url('./font/sans-serif/SourceSansPro-SemiBold.ttf') format('truetype')
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(43, 160, 250);
+    cursor: pointer;
+    transition: 0s;
+}
+
+a:hover {
+    text-decoration: underline rgb(43, 160, 250) 1px;
+    text-underline-offset: 2px;
+}
+
+* {
+    overflow-x: hidden;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    scroll-behavior: smooth;
+    user-select: none;
+    -moz-user-select: none;
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    outline: none !important;
+    font-family: 'Source Sans Pro';
+    scrollbar-width: thin;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(34, 34, 34);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ui-controller {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    margin: auto;
+    /* padding: 15px; */
+    background-color: rgb(34, 34, 34);
+    overflow-y: auto;
+    border: 2px dashed red;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 120px;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://image.shutterstock.com/image-vector/color-gradient-background-design-abstract-260nw-1176137125.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.avatar {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 0;
+    padding: 0;
+    margin-top: -40px;
+    margin-left: 15px;
+    /* background-color: rgb(100, 100, 100); */
+    background-image: url('https://www.designbolts.com/wp-content/uploads/2016/04/Letter-C-Logo-Design.jpg');
+    border: 6px solid rgb(24, 25, 28);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, .5); */
+}
+
+.toolbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 40px;
+    min-height: 40px;
+    margin: 0;
+    padding: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: rgb(34, 34, 34);
+    border-bottom: 2px solid rgba(255, 255, 255, .05);
+    /* border: 2px dashed red; */
+    display: flex;
+    align-items: center;
+    z-index: 10;
+}
+
+.toolbar>#btn-close-second {
+    position: relative;
+    /* width: max-content; */
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    padding-left: 8px;
+    padding-right: 8px;
+    color: rgb(119, 119, 119);
+    cursor: pointer;
+    border-radius: 2px;
+    box-shadow: none;
+    font-family: 'Source Sans Pro SemiBold';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0s linear;
+}
+
+.toolbar>#btn-close-second:hover {
+    color: rgb(166, 79, 248);
+}
+
+.toolbar>#btn-close-second:active {
+    box-shadow: 0 0 0 1px rgb(166 79 248);
+    color: rgb(166, 79, 248);
+}
+
+.toolbar>#btn-close-second:hover>svg {
+    fill: rgb(166, 79, 248);
+}
+
+.toolbar>#btn-close-second:active>svg {
+    fill: rgb(166, 79, 248);
+}
+
+.toolbar>#btn-close-second>svg {
+    fill: rgb(119, 119, 119);
+    width: 14px;
+    height: 14px;
+    /* margin-right: 4px; */
+}
+
+.toolbar>.right {
+    position: relative;
+    width: max-content;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+    margin-right: 0;
+    display: flex;
+    align-items: center;
+    overflow: visible;
+}
+
+.toolbar>.right>.right-btn {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    color: white;
+    cursor: pointer;
+    border-radius: 2px;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    transition: 0s;
+}
+
+.toolbar>.right>.right-btn:active {
+    box-shadow: 0 0 0 1px rgb(166, 79, 248);
+}
+
+.toolbar>.right>.right-btn:hover>svg {
+    fill: rgb(166, 79, 248);
+}
+
+.toolbar>.right>.right-btn:active>svg {
+    fill: rgb(166, 79, 248);
+}
+
+.toolbar>.right>.right-btn>svg {
+    fill: rgb(119, 119, 119);
+    width: 14px;
+    height: 14px;
+}
+
+.content {
+    position: relative;
+    width: 100%;
+    height: max-content;
+    margin: 0;
+    padding: 0;
+    /* margin-top: 40px; */
+    /* padding-top: 10px; */
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.content>.user-item {
+    position: relative;
+    width: 100%;
+    height: 42px;
+    margin: 0;
+    padding: 0;
+    padding-left: 8px;
+    padding-right: 8px;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.content>.user-item:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, .05);
+}
+
+/* .content>.user-item:hover>.username{
+    text-decoration: underline .5px white;
+    text-underline-offset: 2px;
+} */
+
+.content>.user-item>.avatar {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    margin: 0;
+    padding: 0;
+    margin-right: 12px;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.content>.user-item>.username {
+    position: relative;
+    width: max-content;
+    margin: 0;
+    padding: 0;
+    margin-top: -1.5px;
+    /* margin-left: 10px; */
+    /* padding-right: 7.5px; */
+    color: white;
+    font-size: 16px;
+    /* line-height: 20px; */
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.content>.news {
+    position: relative;
+    width: 100%;
+    height: max-content;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 10px;
+    /* border: 2px dashed red; */
+    border-bottom: 1px solid rgb(100, 100, 100);
+}
+
+.content>.news>.header {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    margin-top: 17.5px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-flow: row;
+}
+
+.content>.news>.header>.avatar {
+    position: relative;
+    width: 50px;
+    min-width: 50px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    /* border: 2px dashed green; */
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-image: url('https://www.designbolts.com/wp-content/uploads/2016/04/Letter-C-Logo-Design.jpg'); */
+}
+
+.content>.news>.header>.right {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    padding-left: 7.5px;
+}
+
+.content>.news>.header>.right>.author {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    margin-top: 6px;
+    /* border: 1px dashed rgb(67, 217, 47); */
+    color: white;
+    font-size: 15px;
+    font-family: 'Source Sans Pro SemiBold';
+}
+
+.content>.news>.header>.right>.date {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    /* border: 1px dashed rgb(193, 135, 218); */
+    color: rgb(200, 200, 200);
+    font-size: 15px;
+    font-family: 'Source Sans Pro';
+}
+
+.content>.news>.title {
+    position: relative;
+    width: 100%;
+    height: max-content;
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-size: 15px;
+    font-family: 'Source Sans Pro Black';
+    line-height: 21px;
+}
+
+.content>.news>.content {
+    position: relative;
+    width: 100%;
+    height: max-content;
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    font-family: 'Source Sans Pro';
+    line-height: 21px;
+}
+
+.content>.news>img {
+    position: relative;
+    width: auto;
+    height: auto;
+    min-width: 75%;
+    max-width: 100%;
+    max-height: 250px;
+    margin: 0;
+    padding: 0;
+    margin-top: 11.5px;
+    margin-bottom: 7.5px;
+    border-radius: 16px;
+    object-fit: cover;
+    pointer-events: none;
+    border: 1px solid rgb(47, 51, 54);
+}

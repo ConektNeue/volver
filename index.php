@@ -5,7 +5,12 @@ date_default_timezone_set('Europe/Paris');
 session_start();
 
 if ($_SESSION['logged'] == true) {
-    header("Location: ./user/home/");
+    if (!empty($_REQUEST["extension"])) {
+        $extension = $_REQUEST["extension"];
+        header("Location: ./extension/home/");
+    } else {
+        header("Location: ./user/home/");
+    }
 }
 
 if (!empty($_REQUEST["username"]) && !empty($_REQUEST["password"]) && !empty($_REQUEST["Connexion"])) {
@@ -21,8 +26,13 @@ if (!empty($_REQUEST["username"]) && !empty($_REQUEST["password"]) && !empty($_R
         if ($account[$i]["username"] == $username && $account[$i]["authentifiant"] == $password) {
             $_SESSION["logged"] = true;
             $_SESSION["username"] = $username;
-            header("Location: ./user/home/");
             $loggedIn = true;
+            if (!empty($_REQUEST["extension"])) {
+                $extension = $_REQUEST["extension"];
+                header("Location: ./extension/home/");
+            } else {
+                header("Location: ./user/home/");
+            }
         }
     }
 
@@ -53,7 +63,12 @@ if (!empty($_REQUEST["username"]) && !empty($_REQUEST["password"]) && !empty($_R
 
         $_SESSION["logged"] = true;
         $_SESSION["username"] = $username;
-        header("Location: ./user/home/");
+        if (!empty($_REQUEST["extension"])) {
+            $extension = $_REQUEST["extension"];
+            header("Location: ./extension/home/");
+        } else {
+            header("Location: ./user/home/");
+        }
     }
 }
 
